@@ -1,35 +1,49 @@
 import React from 'react';
+import { CardProps } from '../../types/types';
 
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
+import {
+	Card,
+	CardActions,
+	CardContent,
+	Typography,
+	CardMedia,
+} from '@mui/material';
 
-const ArticleCard = () => {
+import { East, CalendarToday } from '@mui/icons-material';
+
+const ArticleCard = ({ imgUrl, date, title, description }: CardProps) => {
 	return (
-		<Card sx={{ maxWidth: 400 }}>
-			<CardMedia
-				sx={{ height: 217 }}
-				image='https://images.unsplash.com/photo-1546557036-57b741df8f5a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bGl6emFyZHxlbnwwfHwwfHw%3D&w=1000&q=80'
-				title='green iguana'
-			/>
+		<Card
+			sx={{
+				maxWidth: 400,
+				minHeight: '500px',
+				boxShadow: '0px 8px 24px rgba(0, 0, 0, 0.05)',
+			}}
+		>
+			<CardMedia sx={{ height: 217 }} image={imgUrl} title='green iguana' />
 			<CardContent>
-				<Typography gutterBottom variant='body2' color='text.secondary'>
-					June 29th, 2021
+				<Typography
+					gutterBottom
+					variant='body2'
+					color='text.secondary'
+					sx={{ display: 'flex', alignItems: 'center' }}
+				>
+					<CalendarToday sx={{ margin: '0 7px 0 0', width: '18px' }} />
+					{date}
 				</Typography>
 				<Typography gutterBottom variant='h5' component='div'>
-					The 2020 World's Most Valuable Brands
+					{title}
 				</Typography>
 				<Typography variant='body2' color='text.secondary'>
-					Non sed molestie tortor massa vitae in mattis. Eget vel consequat
-					hendrerit commodo libero aliquam. Urna arcu nunc tortor vitae
-					pharetra...
+					{description}
 				</Typography>
 			</CardContent>
-			<CardActions>
-				<Button size='small'>Read more {'->'}</Button>
+			<CardActions sx={{ padding: '16px' }}>
+				<Typography
+					sx={{ display: 'flex', alignItems: 'center', fontWeight: '700' }}
+				>
+					Read more <East sx={{ margin: '0 0 0 5px', width: '15px' }} />
+				</Typography>
 			</CardActions>
 		</Card>
 	);

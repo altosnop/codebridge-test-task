@@ -1,34 +1,19 @@
 import React from 'react';
 
-import {
-	Box,
-	Container,
-	FormControl,
-	OutlinedInput,
-	InputAdornment,
-	Typography,
-	Divider,
-} from '@mui/material';
+import { Box, Container, Typography, Divider } from '@mui/material';
 
 import ArticlesList from '../../components/ArticlesList';
+import FilterBar from '../../components/FilterBar';
 
 const Home = () => {
 	return (
 		<Container maxWidth='xl'>
-			<FormControl sx={{ width: '600px' }} variant='outlined'>
-				<Typography component='h2'>Filter by keywords</Typography>
-				<OutlinedInput
-					id='outlined-adornment-weight'
-					startAdornment={<InputAdornment position='start'>$</InputAdornment>}
-					aria-describedby='outlined-weight-helper-text'
-					inputProps={{
-						'aria-label': 'weight',
-					}}
-				/>
-			</FormControl>
+			<FilterBar />
 
-			<Typography component='h2'>Results: 6</Typography>
-			<Divider />
+			<Typography sx={{ margin: '0 0 5px', fontWeight: '600' }}>
+				Results: 6
+			</Typography>
+			<Divider sx={{ margin: '0 0 45px' }} />
 
 			<Box sx={{ flexGrow: 1 }}>
 				<ArticlesList />
