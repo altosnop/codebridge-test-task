@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import {
 	FormControl,
@@ -8,14 +8,19 @@ import {
 } from '@mui/material';
 
 import SearchIcon from '@mui/icons-material/Search';
+import { useAppDispatch } from '../../hooks/useAppDispatch';
+import { useAppSelector } from '../../hooks/useAppSelector';
+import { filterSelector } from '../../store/articles/articlesSelectors';
+import { setFilter } from '../../store/articles/articlesSlice';
 
 const FilterBar = () => {
-	const [filter, setFilter] = useState('');
+	const dispatch = useAppDispatch();
+	const filterValue = useAppSelector(filterSelector);
 
 	const onFilterChange = (
 		e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
 	) => {
-		setFilter(e.currentTarget.value);
+		dispatch(setFilter(e.currentTarget.value));
 	};
 
 	return (
@@ -27,7 +32,7 @@ const FilterBar = () => {
 				Filter by keywords
 			</Typography>
 			<OutlinedInput
-				value={filter}
+				value={filterValue}
 				onChange={onFilterChange}
 				startAdornment={
 					<InputAdornment position='start'>

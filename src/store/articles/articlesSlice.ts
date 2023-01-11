@@ -32,6 +32,9 @@ const articlesSlice = createSlice({
 			state.items = [...action.payload];
 			state.totalItems = state.items.length;
 		},
+		setFilter: (state, action: PayloadAction<string>) => {
+			state.filter = action.payload;
+		},
 	},
 	extraReducers: builder => {
 		builder.addCase(getArticles.pending, (state, _) => {
@@ -43,6 +46,6 @@ const articlesSlice = createSlice({
 	},
 });
 
-export const { setArticles } = articlesSlice.actions;
+export const { setArticles, setFilter } = articlesSlice.actions;
 
 export default articlesSlice.reducer;
