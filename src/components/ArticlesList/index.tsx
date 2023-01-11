@@ -18,17 +18,13 @@ const ArticlesList = () => {
 	}, [dispatch]);
 
 	return (
-		<Grid
-			container
-			spacing={{ xs: 1, md: 4 }}
-			columns={{ xs: 1, sm: 8, md: 16 }}
-			sx={{ margin: '0 0 60px' }}
-		>
+		<Grid container spacing={4} justifyContent='center' alignItems='stretch'>
 			{articles &&
 				articles.map(article => {
 					return (
-						<Grid key={article.id} item xs={2} sm={4} md={4}>
+						<Grid key={article.id} item xs={12} sm={6} md={4} pr={1}>
 							<ArticleCard
+								id={article.id}
 								imgUrl={article.imageUrl}
 								date={article.updatedAt}
 								title={article.title}

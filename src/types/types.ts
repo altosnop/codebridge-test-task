@@ -1,4 +1,4 @@
-export type Article = {
+export type TArticle = {
 	id: number;
 	title: string;
 	imageUrl: string;
@@ -6,14 +6,15 @@ export type Article = {
 	updatedAt: string;
 };
 
-export type ArticlesState = {
-	items: Article[];
+export type TArticlesState = {
+	items: TArticle[];
 	filter: string;
 	totalItems: number;
 	loading: boolean;
 };
 
-export type CardProps = {
+export type TCardProps = {
+	id: number;
 	imgUrl: string;
 	date: string;
 	title: string;
