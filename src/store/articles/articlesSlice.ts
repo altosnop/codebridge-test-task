@@ -5,7 +5,6 @@ import { TArticlesState, TArticle } from '../../types/types';
 const initialState: TArticlesState = {
 	items: [],
 	filter: '',
-	totalItems: 0,
 	loading: false,
 };
 
@@ -30,7 +29,6 @@ const articlesSlice = createSlice({
 	reducers: {
 		setArticles: (state, action: PayloadAction<TArticle[]>) => {
 			state.items = [...action.payload];
-			state.totalItems = state.items.length;
 		},
 		setFilter: (state, action: PayloadAction<string>) => {
 			state.filter = action.payload;

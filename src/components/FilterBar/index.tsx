@@ -1,17 +1,15 @@
 import React from 'react';
-
+import { useAppDispatch } from '../../hooks/useAppDispatch';
+import { useAppSelector } from '../../hooks/useAppSelector';
+import { filterSelector } from '../../store/articles/articlesSelectors';
+import { setFilter } from '../../store/articles/articlesSlice';
+import SearchIcon from '@mui/icons-material/Search';
 import {
 	FormControl,
 	OutlinedInput,
 	InputAdornment,
 	Typography,
 } from '@mui/material';
-
-import SearchIcon from '@mui/icons-material/Search';
-import { useAppDispatch } from '../../hooks/useAppDispatch';
-import { useAppSelector } from '../../hooks/useAppSelector';
-import { filterSelector } from '../../store/articles/articlesSelectors';
-import { setFilter } from '../../store/articles/articlesSlice';
 
 const FilterBar = () => {
 	const dispatch = useAppDispatch();

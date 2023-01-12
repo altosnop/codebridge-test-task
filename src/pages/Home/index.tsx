@@ -1,20 +1,18 @@
 import React from 'react';
-
-import { Box, Container, Typography, Divider } from '@mui/material';
-
 import ArticlesList from '../../components/ArticlesList';
 import FilterBar from '../../components/FilterBar';
 import { useAppSelector } from '../../hooks/useAppSelector';
-import { totalItemsSelector } from '../../store/articles/articlesSelectors';
+import { filteredArticlesSelector } from '../../store/articles/articlesSelectors';
+import { Box, Container, Typography, Divider } from '@mui/material';
 
 const Home = () => {
-	const totalItems = useAppSelector(totalItemsSelector);
+	const filteredItems = useAppSelector(filteredArticlesSelector);
 	return (
 		<Container maxWidth='lg'>
 			<FilterBar />
 
 			<Typography sx={{ margin: '0 0 5px', fontWeight: '600' }}>
-				Results: {totalItems}
+				Results: {filteredItems.length}
 			</Typography>
 			<Divider sx={{ margin: '0 0 45px' }} />
 

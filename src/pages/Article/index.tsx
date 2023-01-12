@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './styles.scss';
-
-import { Container, Paper, Typography, Box } from '@mui/material';
-import { TArticle } from './../../types/types';
-
-import WestIcon from '@mui/icons-material/West';
-import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
+import { useNavigate, useParams } from 'react-router-dom';
+import { TArticle } from './../../types/types';
+import { Container, Paper, Typography, Box } from '@mui/material';
+import WestIcon from '@mui/icons-material/West';
 
 const Article = () => {
 	const { id } = useParams();

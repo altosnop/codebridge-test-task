@@ -9,7 +9,6 @@ export type TArticle = {
 export type TArticlesState = {
 	items: TArticle[];
 	filter: string;
-	totalItems: number;
 	loading: boolean;
 };
 
