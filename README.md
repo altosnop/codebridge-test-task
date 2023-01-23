@@ -1,1 +1,1 @@
-# Codebridge Test Task
+# Space News App
